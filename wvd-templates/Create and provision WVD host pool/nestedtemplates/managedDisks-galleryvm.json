@@ -217,7 +217,7 @@
                         "managedDisk": {
                             "storageAccountType": "[variables('storageAccountType')]"
                         }
-                    }
+                    },
                     "windowsConfiguration": {
                         "timeZone": "GMT Standard Time"
                     }
