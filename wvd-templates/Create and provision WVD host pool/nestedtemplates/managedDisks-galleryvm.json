@@ -205,7 +205,7 @@
                     "adminUsername": "[parameters('existingDomainUsername')]",
                     "adminPassword": "[parameters('existingDomainPassword')]"
                 },
-                "commandToExecute": "[concat('tzutil.exe', ' /s \"', GMT Standard Time'), '\"')]",
+                "commandToExecute": "TZUTIL.exe /s GMT Standard Time",
                 "storageProfile": {
                     "imageReference": {
                         "publisher": "[variables('galleryimage')[parameters('rdshGalleryImageSKU')].galleryPublisher]",
