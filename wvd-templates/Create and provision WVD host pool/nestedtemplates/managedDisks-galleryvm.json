@@ -217,11 +217,11 @@
                         "managedDisk": {
                             "storageAccountType": "[variables('storageAccountType')]"
                         }
-                    },
-                    "windowsConfiguration": {
-                        "timeZone": "GMT Standard Time"
                     }
                 },
+                "windowsConfiguration": {
+                        "timeZone": "GMT Standard Time"
+                },                
                 "networkProfile": {
                     "networkInterfaces": [
                         {
