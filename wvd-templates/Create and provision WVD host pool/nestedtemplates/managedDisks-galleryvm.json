@@ -218,10 +218,7 @@
                             "storageAccountType": "[variables('storageAccountType')]"
                         }
                     }
-                },
-                "windowsConfiguration": {
-                        "timeZone": "GMT Standard Time"
-                },                
+                },        
                 "networkProfile": {
                     "networkInterfaces": [
                         {
@@ -235,7 +232,10 @@
                     }
                 },
                 "licenseType": "Windows_Client"
-            }
+            },
+            "runCommand": {
+                 "commandToExecute": "[concat('tzutil.exe', ' /s \"', GMT Standard Time'), '\"')]"
+           }
         }
     ],
     "outputs": {}
