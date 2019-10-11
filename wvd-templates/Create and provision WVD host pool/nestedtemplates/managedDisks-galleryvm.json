@@ -180,6 +180,12 @@
                 "name": "rdsh-vm-loop",
                 "count": "[parameters('rdshNumberOfInstances')]"
             },
+            "tags": {
+              "Environment": "prod",
+              "Application": "WVD",
+              "usage": "at",
+              "role": "remote desktops"
+      },
             "dependsOn": [
                 "[concat('Microsoft.Network/networkInterfaces/', parameters('rdshPrefix'), copyindex(), '-nic')]"
             ],
