@@ -156,6 +156,12 @@
                 "name": "rdsh-nic-loop",
                 "count": "[parameters('rdshNumberOfInstances')]"
             },
+            "tags": {
+              "Environment": "prod",
+              "Application": "WVD",
+              "usage": "at",
+              "role": "remote desktops"
+            },
             "properties": {
                 "ipConfigurations": [
                     {
@@ -180,6 +186,12 @@
                 "name": "rdsh-vm-loop",
                 "count": "[parameters('rdshNumberOfInstances')]"
             },
+            "tags": {
+              "Environment": "prod",
+              "Application": "WVD",
+              "usage": "at",
+              "role": "remote desktops"
+            },
             "dependsOn": [
                 "[concat('Microsoft.Network/networkInterfaces/', parameters('rdshPrefix'), copyindex(), '-nic')]"
             ],
@@ -191,10 +203,7 @@
                 "osProfile": {
                     "computerName": "[concat(parameters('rdshPrefix'), copyindex())]",
                     "adminUsername": "[parameters('existingDomainUsername')]",
-                    "adminPassword": "[parameters('existingDomainPassword')]",
-                    "windowsConfiguration": {
-                      "timeZone": "GMT Standard Time"
-                    }
+                    "adminPassword": "[parameters('existingDomainPassword')]"
                 },
                 "storageProfile": {
                     "imageReference": {
@@ -209,7 +218,7 @@
                             "storageAccountType": "[variables('storageAccountType')]"
                         }
                     }
-                },
+                },        
                 "networkProfile": {
                     "networkInterfaces": [
                         {
