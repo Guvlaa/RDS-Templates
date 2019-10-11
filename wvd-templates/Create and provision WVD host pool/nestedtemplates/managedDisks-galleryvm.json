@@ -203,8 +203,7 @@
                 "osProfile": {
                     "computerName": "[concat(parameters('rdshPrefix'), copyindex())]",
                     "adminUsername": "[parameters('existingDomainUsername')]",
-                    "adminPassword": "[parameters('existingDomainPassword')]",
-                    "timeZone": "GMT Standard Time"
+                    "adminPassword": "[parameters('existingDomainPassword')]"
                 },
                 "storageProfile": {
                     "imageReference": {
@@ -218,6 +217,9 @@
                         "managedDisk": {
                             "storageAccountType": "[variables('storageAccountType')]"
                         }
+                    }
+                    "windowsConfiguration": {
+                        "timeZone": "GMT Standard Time"
                     }
                 },
                 "networkProfile": {
