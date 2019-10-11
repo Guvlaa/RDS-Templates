@@ -203,9 +203,7 @@
                 "osProfile": {
                     "computerName": "[concat(parameters('rdshPrefix'), copyindex())]",
                     "adminUsername": "[parameters('existingDomainUsername')]",
-                    "adminPassword": "[parameters('existingDomainPassword')]"
-                },
-                "windowsConfiguration": {
+                    "adminPassword": "[parameters('existingDomainPassword')]",
                     "timeZone": "GMT Standard Time"
                 },
                 "storageProfile": {
